@@ -13,10 +13,10 @@ public class Solution {
     public ListNode detectCycle(ListNode head) {
       ListNode slow=head;
         ListNode fast=head;
-        while(fast!=null && fast.next!=null){
+        while(fast!=null && fast.next!=null){ //fast.next!=null主要用于如果只有一个结点，需要返回Null.
             fast=fast.next.next;
             slow=slow.next;
-            if(slow.equals(fast)){
+            if(slow.equals(fast)){    //快慢指针相遇
                  fast=head;
             while(!fast.equals(slow))
             { slow=slow.next;
